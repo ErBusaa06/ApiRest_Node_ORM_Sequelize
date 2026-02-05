@@ -1,25 +1,23 @@
-import { DataTypes } from "sequelize";
-import { sequelize } from "../config/db.js";
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/db.js';
 
-export const Producto = sequelize.define("Productos", {
+const Productos = sequelize.define('Productos', {
   id: {
     type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
   },
   nombre: {
     type: DataTypes.STRING,
     allowNull: false
   },
   precio: {
-    type: DataTypes.FLOAT,
+    type: DataTypes.DECIMAL(10, 2),
     allowNull: false
-  },
-  stock: {
-    type: DataTypes.INTEGER,
-    defaultValue: 0
   }
 }, {
-  tableName: "productos",
-  timestamps: true
+  tableName: 'productos',
+  timestamps: false
 });
+
+export default Productos;

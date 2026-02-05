@@ -1,22 +1,36 @@
-import express from "express";
-import productoRoutes from "./routes/productosRoutes.js";
-import { sequelize } from "./config/db.js";
+import express from 'express';
+import cors from 'cors';
+import sequelize from './config/db.js';
+import productosRoutes from './routes/productosRoutes.js';
+import logsRoutes from './routes/logsRoutes.js';
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(cors());
 app.use(express.json());
 
-// Rutas
-app.use("/productos", productoRoutes);
+// Routes
+app.use('/productos', productosRoutes);
+app.use('/logs', logsRoutes);
 
-// Sincronizar base de datos
-(async () => {
+// Database connection and server start
+const startServer = async () => {
   try {
-    await sequelize.sync({ alter: true });
-    console.log("✅ Tablas sincronizadas.");
-  } catch (error) {
-    console.error("❌ Error al sincronizar las tablas:", error);
-  }
-})();
+    await sequelize.authenticate();
+    console.log('Base de datos conectada.');
 
-const PORT = 3000;
-app.listen(PORT, () => console.log(`🚀 Servidor en http://localhost:${PORT}`));
+    // Sincronizar modelos con la base de datos
+    await sequelize.sync({ alter: true });
+    console.log('Modelos sincronizados.');
+
+    app.listen(PORT, () => {
+      console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    console.error('Error al conectar la base de datos:', error);
+  }
+};
+
+startServer();

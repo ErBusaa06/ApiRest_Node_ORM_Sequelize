@@ -1,17 +1,17 @@
-import { Sequelize } from "sequelize";
+import { Sequelize } from 'sequelize';
+import dotenv from 'dotenv';
 
-export const sequelize = new Sequelize("api_rest_db", "root", "", {
-  host: "localhost",
-  dialect: "mysql",
-  logging: false
-});
+dotenv.config();
 
-// Comprobar conexión
-(async () => {
-  try {
-    await sequelize.authenticate();
-    console.log("✅ Conexión establecida con la base de datos.");
-  } catch (error) {
-    console.error("❌ Error al conectar a la base de datos:", error);
+const sequelize = new Sequelize(
+  process.env.DB_NAME || 'api_rest_db',
+  process.env.DB_USER || 'root',
+  process.env.DB_PASSWORD || '',
+  {
+    host: process.env.DB_HOST || 'localhost',
+    dialect: 'mysql',
+    logging: false
   }
-})();
+);
+
+export default sequelize;

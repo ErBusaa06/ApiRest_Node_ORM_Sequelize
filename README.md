@@ -188,7 +188,8 @@ Content-Type: application/json
 **Obtener todos los logs**
 
 GET /logs
-✅ Comprobación
+
+## ✅ Comprobación
 Inicia MySQL y asegúrate de que la base de datos existe.
 
 Ejecuta el servidor:

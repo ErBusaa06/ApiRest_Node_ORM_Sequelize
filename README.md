@@ -135,12 +135,16 @@ Ejecutar:
 ````
 node autocrud.js
 ````
-⚠️ Importante: Al regenerar controladores base, se sobrescriben.
-Tus controladores extendidos deben vivir en controllers/.
+> ⚠️ **Importante:** Al regenerar controladores base, se sobrescriben.  
+> Tus controladores extendidos deben vivir en `controllers/`.
 
-📬 Endpoints de ejemplo
-Productos
-Crear producto
+---
+
+## 📬 Endpoints de ejemplo
+
+### Productos
+
+**Crear producto**
 
 POST /productos
 Content-Type: application/json

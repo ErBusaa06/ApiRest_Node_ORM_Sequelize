@@ -56,15 +56,18 @@ Dependencias principales:
 git clone https://github.com/TU_USUARIO/TU_REPO.git
 cd TU_REPO
 ````
-Instalar dependencias:
+
+2. Instalar dependencias:
 ````
 npm install
 ````
-Crear la base de datos en MySQL (ejemplo):
+
+3. Crear la base de datos en MySQL (ejemplo):
 ````
 CREATE DATABASE api_rest_db;
 ````
-Configurar variables de entorno en un archivo .env en la raíz del proyecto:
+
+4. Configurar variables de entorno en un archivo .env en la raíz del proyecto:
 ````
 DB_NAME=api_rest_db
 DB_USER=root

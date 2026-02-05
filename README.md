@@ -84,15 +84,18 @@ Para iniciar en modo normal:
 ````
 npm start
 ````
-El servidor estará corriendo en: http://localhost:3000
+El servidor estará corriendo en: **http://localhost:3000**
 
-🗂 Estructura del proyecto
+---
+
+## 🗂 Estructura del proyecto
+
 controllers/
-├── base/                  # Controladores base generados por AutoCRUD
-│   ├── productosBaseController.js
-│   └── logsBaseController.js
-├── productosController.js  # Controlador extendido
-└── logsController.js       # Controlador extendido
+├── base/ # Controladores base generados por AutoCRUD
+│ ├── productosBaseController.js
+│ └── logsBaseController.js
+├── productosController.js # Controlador extendido
+└── logsController.js # Controlador extendido
 
 models/
 ├── productos.js
@@ -107,28 +110,33 @@ services/
 └── logsService.js
 
 config/
-└── db.js                  # Configuración de Sequelize / MySQL
+└── db.js # Configuración de Sequelize / MySQL
 
-server.js                  # Servidor principal
-autocrud.js                # Script AutoCRUD
-.env                       # Variables de entorno
+server.js # Servidor principal
+autocrud.js # Script AutoCRUD
+.env # Variables de entorno
 package.json
 README.md
-🛠 Uso de AutoCRUD
-El script autocrud.js genera automáticamente:
 
-Controladores base (controllers/base/)
 
-Controladores extendidos (si no existen, los puedes crear manualmente)
+---
 
-Rutas (routes/)
+## 🛠 Uso de AutoCRUD
 
-CRUD básico para cada modelo detectado en models/
+El script `autocrud.js` genera automáticamente:
+
+- **Controladores base** (`controllers/base/`)
+- **Controladores extendidos** (si no existen, los puedes crear manualmente)
+- **Rutas** (`routes/`)
+- CRUD básico para cada modelo detectado en `models/`
 
 Ejecutar:
 
+````
 node autocrud.js
-⚠️ Importante: Al regenerar controladores base, se sobrescriben. Tus controladores extendidos deben vivir en controllers/.
+````
+⚠️ Importante: Al regenerar controladores base, se sobrescriben.
+Tus controladores extendidos deben vivir en controllers/.
 
 📬 Endpoints de ejemplo
 Productos
@@ -174,8 +182,9 @@ GET /logs
 ✅ Comprobación
 Inicia MySQL y asegúrate de que la base de datos existe.
 
-Ejecuta el servidor (npm run dev).
+Ejecuta el servidor:
 
+npm run dev
 Prueba los endpoints con Postman o Curl.
 
 Ejecuta node autocrud.js para generar nuevos modelos automáticamente.

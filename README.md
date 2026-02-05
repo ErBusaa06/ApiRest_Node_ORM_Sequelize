@@ -193,8 +193,9 @@ GET /logs
 Inicia MySQL y asegúrate de que la base de datos existe.
 
 Ejecuta el servidor:
-
+````
 npm run dev
+````
 Prueba los endpoints con Postman o Curl.
 
 Ejecuta node autocrud.js para generar nuevos modelos automáticamente.

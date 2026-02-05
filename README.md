@@ -52,29 +52,35 @@ Dependencias principales:
 
 1. Clonar el repositorio:
 
-```bash
+````
 git clone https://github.com/TU_USUARIO/TU_REPO.git
 cd TU_REPO
+````
 Instalar dependencias:
-
+````
 npm install
+````
 Crear la base de datos en MySQL (ejemplo):
-
+````
 CREATE DATABASE api_rest_db;
+````
 Configurar variables de entorno en un archivo .env en la raíz del proyecto:
-
+````
 DB_NAME=api_rest_db
 DB_USER=root
 DB_PASSWORD=TU_PASSWORD
 DB_HOST=localhost
 PORT=3000
+````
 🚀 Ejecución del servidor
 Para iniciar el servidor en modo desarrollo (con reinicio automático):
-
+````
 npm run dev
+````
 Para iniciar en modo normal:
-
+````
 npm start
+````
 El servidor estará corriendo en: http://localhost:3000
 
 🗂 Estructura del proyecto

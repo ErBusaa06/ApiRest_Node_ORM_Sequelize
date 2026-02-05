@@ -153,12 +153,14 @@ Content-Type: application/json
   "nombre": "Laptop",
   "precio": 1200.50
 }
+
 **Obtener todos los productos**
 
 GET /productos
 Obtener producto por id
 
 GET /productos/1
+
 **Actualizar producto**
 
 PUT /productos/1
@@ -168,10 +170,12 @@ Content-Type: application/json
   "nombre": "Laptop Gamer",
   "precio": 1500
 }
+
 **Eliminar producto**
 
 DELETE /productos/1
 Logs
+
 **Crear log**
 
 POST /logs
@@ -180,6 +184,7 @@ Content-Type: application/json
 {
   "log": "Usuario creado correctamente"
 }
+
 **Obtener todos los logs**
 
 GET /logs
